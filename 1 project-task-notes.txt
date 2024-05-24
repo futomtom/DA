@@ -1,0 +1,48 @@
+These are my notes on the project task page. This project is called "Mean-Variance-Standard Deviation Calculator." The URL for the page which these notes are on is https://www.freecodecamp.org/learn/data-analysis-with-python/data-analysis-with-python-projects/mean-variance-standard-deviation-calculator
+
+-> Clone the project boilerplate files in a Gitpod environment 
+-> There are two video courses for the content which this project requires 
+	-> https://www.freecodecamp.org/news/python-for-everybody/ <- Python for Everybody 
+	-> https://www.freecodecamp.org/news/how-to-analyze-data-with-python-pandas/ <- How to Analyze Data with Python, Pandas & Numpy
+	-> The first is 14 hours and the second is 10 hours 
+
+-> There is a file called mean_var_std.py
+	-> We are using this for development <- writing the code in this file 
+	-> Then using the file called main.py to test the code 
+		-> Unit tests for the project are in test_module.py
+		-> They have already been imported into main.py 
+-> We are creating a function in this file called calculate()
+-> The argument of this is a 1x9 array of numbers 
+-> We want to convert the list into a 3x3 Numpy array 
+-> Then to perform calculations on that array 
+	-> We are returning a dictionary 
+	-> The keys of the dictionary are the names of the different statistics which we are computing 
+		-> 'mean', 'variance',...,'sum' 
+		-> There are 6 different summary statistics in total 
+		-> The elements which are stored at each of those keys are 1x3 arrays 
+			-> So for example, there is an array stored at the 'mean' key in the dictionary 
+			-> That is a 1x3 array 
+			-> The first element in that array is another 3x1 array, just full of mean values
+				-> The mean of all of the values in the first row 
+				-> Then the mean of all of the values in the second row and so forth 
+			-> The second element in that array is another 3x1 array, which is the same as the first element but for the mean of the columns in the matrix 
+			-> The final element in the array is a single number -> this is the mean of all of the elements in the array 
+		-> The rows and columns in the matrix are called axes and the numbers are called 'flattened' (in this example)
+		-> We want this returned in a dictionary 
+			-> The elements of this, stored in the summary statistics, should be lists not Numpy arrays 
+	-> Error handling 
+		-> The argument to the function has to be a 1x9 array 
+		-> Otherwise, we want to raise a ValueError exception with the message "List must contain nine numbers."
+
+-> In short
+	-> There is a file called mean_var_std.py
+	-> We are defining the calculate() function inside this
+	-> This takes a 1x9 array of numbers 
+	-> We are shaping this into a 3x3 matrix
+	-> And then returning a dictionary full of summary statistics
+	-> There are 6 different summary statistics which we want to return, and at each element of the dictionary is a 3x1 array 
+	-> The first two elements of those 3x1 arrays are 3x1 arrays, containing the value of the summary statistic first for the rows and then the columns in the matrix at that point 
+	-> The final elements of those dictionary arrays are single numbers, which store the summary statistic but for the entire 3x3 array of values 
+	-> We also implement error handling, in case the argument to the function isn't a 1x9 array 
+	-> There are unit tests which we can run -> these have already been imported into the main file 
+	-> We take the solution once we have it working, push it to a GitHub repository and upload its link to the same page which these notes are made on (at the top of this file)
